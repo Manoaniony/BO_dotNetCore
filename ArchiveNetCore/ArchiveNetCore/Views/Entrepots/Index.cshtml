@@ -1,0 +1,68 @@
+@model IEnumerable<ArchiveNetCore.Models.Entrepots>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="pagetitle">
+    <h1>Entrepôts</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="index"><i class="bi bi-house-door"></i></a></li>
+            <li class="breadcrumb-item active">Entrepôts</li>
+        </ol>
+    </nav>
+</div>
+<section class="section">
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Liste des entrepôts</h5>
+
+                    <table id="table" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Entrepôt</th>
+                                <th>Rayons</th>
+                                <th>Rangées</th>
+                                <th>Niveaux</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.libelle)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.nbre_rayon)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.nbre_range)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.nbre_niveau)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

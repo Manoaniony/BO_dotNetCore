@@ -1,0 +1,56 @@
+﻿<Properties StartupConfiguration="{3C89907E-EC6C-4902-913D-3172BEC32999}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ArchiveNetCore PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ArchiveNetCore/Controllers/HomeController.cs">
+    <Files>
+      <File FileName="ArchiveNetCore/appsettings.json" />
+      <File FileName="ArchiveNetCore/Program.cs" />
+      <File FileName="ArchiveNetCore/Controllers/ArticlesController.cs" />
+      <File FileName="ArchiveNetCore/Data/ArchiveNetCoreContext.cs" />
+      <File FileName="ArchiveNetCore/Utils/Utility.cs" />
+      <File FileName="ArchiveNetCore/Controllers/AccountController.cs" />
+      <File FileName="ArchiveNetCore/Models/ApplicationUser.cs" />
+      <File FileName="ArchiveNetCore/Migrations/20240622212732_InitialCreate.cs" />
+      <File FileName="ArchiveNetCore/Views/Articles/Create.cshtml" />
+      <File FileName="ArchiveNetCore/Views/Shared/_Layout.cshtml" />
+      <File FileName="ArchiveNetCore/Views/Home/Index.cshtml" />
+      <File FileName="ArchiveNetCore/Views/Account/Login.cshtml" />
+      <File FileName="ArchiveNetCore/Views/Account/Register.cshtml" />
+      <File FileName="ArchiveNetCore/Controllers/HomeController.cs" Line="22" Column="5" />
+      <File FileName="ArchiveNetCore/Controllers/EntrepotsController.cs" />
+      <File FileName="ArchiveNetCore/Views/Articles/ArticleNonPlace.cshtml" />
+      <File FileName="ArchiveNetCore/Views/Articles/DetailsArtNivRayRang.cshtml" />
+      <File FileName="ArchiveNetCore/Views/Entrepots/Create.cshtml" />
+      <File FileName="ArchiveNetCore/Views/Entrepots/Index.cshtml" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ArchiveNetCore" expanded="True">
+            <Node name="ArchiveNetCore" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Utils" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="Articles" expanded="True" />
+                <Node name="Entrepots" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

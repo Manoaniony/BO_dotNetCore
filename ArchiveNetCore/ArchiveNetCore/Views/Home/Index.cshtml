@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ArchiveNetCore.Models.Entrepots>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@inject ArchiveNetCore.Utils.Utility Utility
+
+
+@foreach (var item in Model)
+{
+    <div class="pagetitle">
+        <h1>@Html.DisplayFor(modelItem => item.libelle)</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+
+            <div class="col-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        @for (int i = 1; i <= item.nbre_niveau; i++)
+                        {
+                            <h5 class="card-title">Niveau @i</h5>
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" scope="col"></th>
+                                                @for (int j = 1; j <= item.nbre_rayon; j++)
+                                                {
+                                                    <th class="text-center" scope="col">Rayon @j</th>
+                                                }
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (int j = 1; j <= item.nbre_range; j++)
+                                            {
+                                                <tr>
+                                                    <th scope="row">Rangée @j</th>
+                                                    @for (int k = 1; k <= item.nbre_rayon; k++)
+                                                    {
+                                                        <td class="text-center">
+                                                            <a asp-controller="Articles" asp-action="ArticleNonPlace" asp-route-idEntrepots="@item.Id" asp-route-niv="@i" asp-route-rayon="@k" asp-route-range="@j"><i class="bx bx-plus-medical"></i> </a>
+                                                            @{
+                                                                var articles = await Utility.CheckArticlePresenceAsync(item.Id, i, j, k);
+                                                            }
+                                                            @if (articles.Any())
+                                                            {
+                                                                <a asp-controller="Articles" asp-action="DetailsArtNivRayRang" asp-route-idEntrepots="@item.Id" asp-route-niv="@i" asp-route-rayon="@k" asp-route-range="@j">Voir détails</a>
+                                                            }
+                                                        </td>
+                                                    }
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+}
+
+

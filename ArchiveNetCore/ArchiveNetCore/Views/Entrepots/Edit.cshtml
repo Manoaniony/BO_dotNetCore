@@ -1,0 +1,54 @@
+@model ArchiveNetCore.Models.Entrepots
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Entrepots</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="libelle" class="control-label"></label>
+                <input asp-for="libelle" class="form-control" />
+                <span asp-validation-for="libelle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nbre_rayon" class="control-label"></label>
+                <input asp-for="nbre_rayon" class="form-control" />
+                <span asp-validation-for="nbre_rayon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nbre_niveau" class="control-label"></label>
+                <input asp-for="nbre_niveau" class="form-control" />
+                <span asp-validation-for="nbre_niveau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nbre_range" class="control-label"></label>
+                <input asp-for="nbre_range" class="form-control" />
+                <span asp-validation-for="nbre_range" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="desc" class="control-label"></label>
+                <input asp-for="desc" class="form-control" />
+                <span asp-validation-for="desc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

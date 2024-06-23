@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiveNetCore", "ArchiveNetCore\ArchiveNetCore.csproj", "{3C89907E-EC6C-4902-913D-3172BEC32999}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C89907E-EC6C-4902-913D-3172BEC32999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C89907E-EC6C-4902-913D-3172BEC32999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C89907E-EC6C-4902-913D-3172BEC32999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C89907E-EC6C-4902-913D-3172BEC32999}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95BFE637-4EAD-4198-B881-ED1A9C8F375D}
+	EndGlobalSection
+EndGlobal

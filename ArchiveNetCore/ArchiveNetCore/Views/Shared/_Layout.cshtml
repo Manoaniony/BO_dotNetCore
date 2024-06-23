@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>@ViewData["Title"] - Archivage</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/img/favicon.ico" rel="icon">
+    <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="~/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="~/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="~/img/logo.png" alt="">
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="~/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Kevin Anderson</h6>
+                            <span>Web Designer</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <form asp-controller="Account" asp-action="Logout" method="post">
+                                <input type="submit" value="Sign Out" class="dropdown-item d-flex align-items-center" />
+                            </form>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="index">
+                    <i class="bi bi-grid"></i>
+                    <span>Accueil</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#entrepots-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-building"></i><span>Entrepôts</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="entrepots-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a asp-controller="Entrepots" asp-action="Create">
+                            <i class="bi bi-circle"></i><span>Ajout</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a asp-controller="Entrepots" asp-action="Index">
+                            <i class="bi bi-circle"></i><span>Liste</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Entrepots Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#articles-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-archive"></i><span>Articles</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="articles-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a asp-controller="Articles" asp-action="Create">
+                            <i class="bi bi-circle"></i><span>Ajout</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a asp-controller="Articles" asp-action="Index">
+                            <i class="bi bi-circle"></i><span>Liste</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Articles Nav -->
+
+        </ul>
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+        @RenderBody()
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; <strong><span>2023 <a href="https://www.banky-foibe.mg/">BANKY FOIBEN'I MADAGASIKARA</a></span></strong>. All Rights Reserved
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/chart.js/chart.umd.js"></script>
+    <script src="~/vendor/echarts/echarts.min.js"></script>
+    <script src="~/vendor/quill/quill.min.js"></script>
+    <script src="~/vendor/tinymce/tinymce.min.js"></script>
+    <script src="~/js/jquery-3.5.1.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/js/main.js"></script>
+    <script src="~/js/site.js"></script>
+
+    <script>$('#table').DataTable({
+            language: {
+                "emptyTable": "Aucune donnée disponible dans le tableau",
+                "loadingRecords": "Chargement...",
+                "processing": "Traitement...",
+                "select": {
+                    "rows": {
+                        "_": "%d lignes sélectionnées",
+                        "1": "1 ligne sélectionnée"
+                    },
+                    "cells": {
+                        "1": "1 cellule sélectionnée",
+                        "_": "%d cellules sélectionnées"
+                    },
+                    "columns": {
+                        "1": "1 colonne sélectionnée",
+                        "_": "%d colonnes sélectionnées"
+                    }
+                },
+                "autoFill": {
+                    "cancel": "Annuler",
+                    "fill": "Remplir toutes les cellules avec <i>%d<\/i>",
+                    "fillHorizontal": "Remplir les cellules horizontalement",
+                    "fillVertical": "Remplir les cellules verticalement"
+                },
+                "searchBuilder": {
+                    "conditions": {
+                        "date": {
+                            "after": "Après le",
+                            "before": "Avant le",
+                            "between": "Entre",
+                            "empty": "Vide",
+                            "not": "Différent de",
+                            "notBetween": "Pas entre",
+                            "notEmpty": "Non vide",
+                            "equals": "Égal à"
+                        },
+                        "number": {
+                            "between": "Entre",
+                            "empty": "Vide",
+                            "gt": "Supérieur à",
+                            "gte": "Supérieur ou égal à",
+                            "lt": "Inférieur à",
+                            "lte": "Inférieur ou égal à",
+                            "not": "Différent de",
+                            "notBetween": "Pas entre",
+                            "notEmpty": "Non vide",
+                            "equals": "Égal à"
+                        },
+                        "string": {
+                            "contains": "Contient",
+                            "empty": "Vide",
+                            "endsWith": "Se termine par",
+                            "not": "Différent de",
+                            "notEmpty": "Non vide",
+                            "startsWith": "Commence par",
+                            "equals": "Égal à",
+                            "notContains": "Ne contient pas",
+                            "notEndsWith": "Ne termine pas par",
+                            "notStartsWith": "Ne commence pas par"
+                        },
+                        "array": {
+                            "empty": "Vide",
+                            "contains": "Contient",
+                            "not": "Différent de",
+                            "notEmpty": "Non vide",
+                            "without": "Sans",
+                            "equals": "Égal à"
+                        }
+                    },
+                    "add": "Ajouter une condition",
+                    "button": {
+                        "0": "Recherche avancée",
+                        "_": "Recherche avancée (%d)"
+                    },
+                    "clearAll": "Effacer tout",
+                    "condition": "Condition",
+                    "data": "Donnée",
+                    "deleteTitle": "Supprimer la règle de filtrage",
+                    "logicAnd": "Et",
+                    "logicOr": "Ou",
+                    "title": {
+                        "0": "Recherche avancée",
+                        "_": "Recherche avancée (%d)"
+                    },
+                    "value": "Valeur",
+                    "leftTitle": "Désindenter le critère",
+                    "rightTitle": "Indenter le critère"
+                },
+                "searchPanes": {
+                    "clearMessage": "Effacer tout",
+                    "count": "{total}",
+                    "title": "Filtres actifs - %d",
+                    "collapse": {
+                        "0": "Volet de recherche",
+                        "_": "Volet de recherche (%d)"
+                    },
+                    "countFiltered": "{shown} ({total})",
+                    "emptyPanes": "Pas de volet de recherche",
+                    "loadMessage": "Chargement du volet de recherche...",
+                    "collapseMessage": "Réduire tout",
+                    "showMessage": "Montrer tout"
+                },
+                "buttons": {
+                    "collection": "Collection",
+                    "colvis": "Visibilité colonnes",
+                    "colvisRestore": "Rétablir visibilité",
+                    "copy": "Copier",
+                    "copySuccess": {
+                        "1": "1 ligne copiée dans le presse-papier",
+                        "_": "%d lignes copiées dans le presse-papier"
+                    },
+                    "copyTitle": "Copier dans le presse-papier",
+                    "csv": "CSV",
+                    "excel": "Excel",
+                    "pageLength": {
+                        "-1": "Afficher toutes les lignes",
+                        "_": "Afficher %d lignes",
+                        "1": "Afficher 1 ligne"
+                    },
+                    "pdf": "PDF",
+                    "print": "Imprimer",
+                    "copyKeys": "Appuyez sur ctrl ou u2318 + C pour copier les données du tableau dans votre presse-papier.",
+                    "createState": "Créer un état",
+                    "removeAllStates": "Supprimer tous les états",
+                    "removeState": "Supprimer",
+                    "renameState": "Renommer",
+                    "savedStates": "États sauvegardés",
+                    "stateRestore": "État %d",
+                    "updateState": "Mettre à jour"
+                },
+                "decimal": ",",
+                "datetime": {
+                    "previous": "Précédent",
+                    "next": "Suivant",
+                    "hours": "Heures",
+                    "minutes": "Minutes",
+                    "seconds": "Secondes",
+                    "unknown": "-",
+                    "amPm": [
+                        "am",
+                        "pm"
+                    ],
+                    "months": {
+                        "0": "Janvier",
+                        "2": "Mars",
+                        "3": "Avril",
+                        "4": "Mai",
+                        "5": "Juin",
+                        "6": "Juillet",
+                        "8": "Septembre",
+                        "9": "Octobre",
+                        "10": "Novembre",
+                        "1": "Février",
+                        "11": "Décembre",
+                        "7": "Août"
+                    },
+                    "weekdays": [
+                        "Dim",
+                        "Lun",
+                        "Mar",
+                        "Mer",
+                        "Jeu",
+                        "Ven",
+                        "Sam"
+                    ]
+                },
+                "editor": {
+                    "close": "Fermer",
+                    "create": {
+                        "title": "Créer une nouvelle entrée",
+                        "button": "Nouveau",
+                        "submit": "Créer"
+                    },
+                    "edit": {
+                        "button": "Editer",
+                        "title": "Editer Entrée",
+                        "submit": "Mettre à jour"
+                    },
+                    "remove": {
+                        "button": "Supprimer",
+                        "title": "Supprimer",
+                        "submit": "Supprimer",
+                        "confirm": {
+                            "_": "Êtes-vous sûr de vouloir supprimer %d lignes ?",
+                            "1": "Êtes-vous sûr de vouloir supprimer 1 ligne ?"
+                        }
+                    },
+                    "multi": {
+                        "title": "Valeurs multiples",
+                        "info": "Les éléments sélectionnés contiennent différentes valeurs pour cette entrée. Pour modifier et définir tous les éléments de cette entrée à la même valeur, cliquez ou tapez ici, sinon ils conserveront leurs valeurs individuelles.",
+                        "restore": "Annuler les modifications",
+                        "noMulti": "Ce champ peut être modifié individuellement, mais ne fait pas partie d'un groupe. "
+                    },
+                    "error": {
+                        "system": "Une erreur système s'est produite (<a target=\"\\\" rel=\"nofollow\" href=\"\\\">Plus d'information<\/a>)."
+                    }
+                },
+                "stateRestore": {
+                    "removeSubmit": "Supprimer",
+                    "creationModal": {
+                        "button": "Créer",
+                        "order": "Tri",
+                        "paging": "Pagination",
+                        "scroller": "Position du défilement",
+                        "search": "Recherche",
+                        "select": "Sélection",
+                        "columns": {
+                            "search": "Recherche par colonne",
+                            "visible": "Visibilité des colonnes"
+                        },
+                        "name": "Nom :",
+                        "searchBuilder": "Recherche avancée",
+                        "title": "Créer un nouvel état",
+                        "toggleLabel": "Inclus :"
+                    },
+                    "renameButton": "Renommer",
+                    "duplicateError": "Il existe déjà un état avec ce nom.",
+                    "emptyError": "Le nom ne peut pas être vide.",
+                    "emptyStates": "Aucun état sauvegardé",
+                    "removeConfirm": "Voulez vous vraiment supprimer %s ?",
+                    "removeError": "Échec de la suppression de l'état.",
+                    "removeJoiner": "et",
+                    "removeTitle": "Supprimer l'état",
+                    "renameLabel": "Nouveau nom pour %s :",
+                    "renameTitle": "Renommer l'état"
+                },
+                "info": "Affichage de _START_ à _END_ sur _TOTAL_ entrées",
+                "infoEmpty": "Affichage de 0 à 0 sur 0 entrées",
+                "infoFiltered": "(filtrées depuis un total de _MAX_ entrées)",
+                "lengthMenu": "Afficher _MENU_ entrées",
+                "paginate": {
+                    "first": "Première",
+                    "last": "Dernière",
+                    "next": "Suivante",
+                    "previous": "Précédente"
+                },
+                "zeroRecords": "Aucune entrée correspondante trouvée",
+                "aria": {
+                    "sortAscending": " : activer pour trier la colonne par ordre croissant",
+                    "sortDescending": " : activer pour trier la colonne par ordre décroissant"
+                },
+                "infoThousands": " ",
+                "search": "Rechercher :",
+                "thousands": " "
+            }
+        });</script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
